@@ -521,3 +521,22 @@ interface(`docker_entrypoint',`
 	')
 	allow $1 docker_exec_t:file entrypoint;
 ')
+
+########################################
+## <summary>
+##  Read and write nsfs_t files
+## </summary>
+## <param name="domain">
+##  <summary>
+##  Domain allowed access.
+##  </summary>
+## </param>
+#
+
+interface(`fs_rw_nsfs_files',`
+    gen_require(`
+        attribute filesystem_type;
+    ')
+
+    rw_files_pattern($1, nsfs_t, nsfs_t)
+')
