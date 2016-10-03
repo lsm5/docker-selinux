@@ -1,4 +1,4 @@
-TARGETS?=docker
+TARGETS?=container
 MODULES?=${TARGETS:=.pp.bz2}
 SHAREDIR?=/usr/share
 
